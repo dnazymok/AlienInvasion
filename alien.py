@@ -8,7 +8,7 @@ class Alien(Sprite):
         self.screen = ai_game.screen
         self.settings = ai_game.settings
 
-        self.image = pygame.transform.scale(pygame.image.load('images/alien.bmp'), (50, 50))
+        self.image = pygame.transform.scale(pygame.image.load('images/alien.png'), (70, 70))
         self.rect = self.image.get_rect()
         self.rect.x = self.rect.width
         self.rect.y = self.rect.height
@@ -20,7 +20,7 @@ class Alien(Sprite):
             return True
 
     def update(self):
-        self.x += (self.settings.alien_speed * self.settings.fleet_direction)
+        self.x += (self.settings.alien_speed_factor * self.settings.fleet_direction)
         self.rect.x = self.x
 
 
